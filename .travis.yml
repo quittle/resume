@@ -1,0 +1,11 @@
+sudo: required
+addons.apt.packages:
+    - texlive-latex-base
+    - xzdec
+    - texlive-fonts-recommended
+    - texlive-font-utils
+    - texlive-latex-extra
+    - texlive-xetex
+script:
+    - pdflatex -interaction=nonstopmode -halt-on-error *.tex
+    - xelatex -output-directory=build -halt-on-error -interaction=nonstopmode cv_13.tex

@@ -1,0 +1,11 @@
+% \renewcommand{\GenericWarning}[2]{
+%     \GenericError{#1}{#2}{}{This warning has been turned into a fatal error.}
+% }
+
+\documentclass[10pt]{article} % Default font size
+
+\input{src/compiler.tex} % Compiler specific options
+
+\input{src/structure.tex} % Include the file specifying document layout
+
+\input{src/document.tex} % The body of the document

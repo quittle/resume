@@ -15,7 +15,12 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\usepackage[a4paper, hmargin=25mm, vmargin=30mm, top=20mm]{geometry} % Use A4 paper and set margins
+\usepackage[
+    a4paper,
+    hmargin = 25mm,
+    vmargin = 30mm,
+    top = 20mm
+]{geometry} % Use A4 paper and set margins
 
 \usepackage{fancyhdr} % Customize the header and footer
 
@@ -30,12 +35,16 @@
 \usepackage[T1]{fontenc} % Output font encoding for international characters
 
 \usepackage{fontspec} % Required for specification of custom fonts
-\setmainfont[Path = src/fonts/erewhon/,
-Extension = .otf,
-BoldFont = Erewhon-Bold,
-ItalicFont = Erewhon-Italic,
-BoldItalicFont = Erewhon-BoldItalic,
-SmallCapsFeatures = {Letters = SmallCaps}
+\setmainfont[
+    Path = src/fonts/erewhon/,
+    Extension = .otf,
+    BoldFont = Erewhon-Bold,
+    ItalicFont = Erewhon-Italic,
+    BoldItalicFont = Erewhon-BoldItalic,
+    SmallCapsFeatures = {
+        Letters = SmallCaps
+
+    }
 ]{Erewhon-Regular}
 
 \usepackage{color} % Required for custom colors

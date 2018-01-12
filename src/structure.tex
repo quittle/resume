@@ -43,7 +43,6 @@
     BoldItalicFont = Erewhon-BoldItalic,
     SmallCapsFeatures = {
         Letters = SmallCaps
-
     }
 ]{Erewhon-Regular}
 
@@ -76,9 +75,9 @@
 %	MAIN HEADER COMMAND
 %----------------------------------------------------------------------------------------
 
-\renewcommand{\title}[1]{
-{\huge{\color{slateblue}\textbf{#1}}}\\ % Header section name and color
-\rule{\textwidth}{0.5mm}\\ % Rule under the header
+\renewcommand {\title} [1] {
+    {\huge {\color {slateblue} \textbf {#1} }} \\ % Header section name and color
+    \rule {\textwidth} {0.5mm} % Rule under the header
 }
 
 %----------------------------------------------------------------------------------------
@@ -86,16 +85,16 @@
 %----------------------------------------------------------------------------------------
 
 \newcommand{\job}[6]{
-\begin{tabbing}
-\hspace{2cm} \= \kill
-\textbf{#1} \> \href{#4}{#3} \\
-\textbf{#2} \>\+ \textit{#5} \\
-\begin{minipage}{\smallertextwidth}
-\vspace{2mm}
-#6
-\end{minipage}
-\end{tabbing}
-\vspace{2mm}
+    \begin{tabbing}
+        \hspace{2cm} \= \kill
+        \textbf{#1} \> \href{#4}{#3} \\
+        \textbf{#2} \>\+ \textit{#5} \\
+        \begin{minipage}{\smallertextwidth}
+            \vspace{2mm}
+            #6
+        \end{minipage}
+    \end{tabbing}
+    \vspace{2mm}
 }
 
 %----------------------------------------------------------------------------------------
@@ -132,8 +131,12 @@
 %----------------------------------------------------------------------------------------
 
 \newcommand{\tabbedblock}[1]{
-\begin{tabbing}
-\hspace{2cm} \= \hspace{4cm} \= \kill
-#1
-\end{tabbing}
+    \begin{tabbing}
+        \hspace{2cm} \= \hspace{4cm} \= \kill
+        #1
+    \end{tabbing}
+}
+
+\newcommand {\email} [1] {
+    \href{mailto:#1}{#1}
 }

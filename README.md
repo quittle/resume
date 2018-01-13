@@ -1,7 +1,7 @@
 # Welcome to Dustin Toff's Resume
 ### *Still in progress...*
 
-[![Build Status](https://travis-ci.org/quittle/www_dustindoloff_com.svg?branch=master)](https://travis-ci.org/quittle/www_dustindoloff_com)
+[![Build Status](https://travis-ci.org/quittle/resume.svg?branch=master)](https://travis-ci.org/quittle/resume)
 
 ### Developing
 

@@ -1,0 +1,97 @@
+\renewcommand {\title} [1] {
+    {\huge {\color {slateblue} \textbf {#1} }} \\ % Header section name and color
+    \rule {\textwidth} {0.5mm} % Rule under the header
+}
+
+% \pgfkeys{
+%  /test/.is family, /test,
+%  value/.estore in = \testValue,
+%  color/.estore in = \testColor,
+% }
+% \newcommand {\test} [2] [] {
+%     \pgfkeys{/test, #1}
+%  the value is \testValue and the color is \testColor
+% }
+
+% \pgfkeys{
+%  /schoolgroup/.is family, /schoolgroup,
+%  start/.estore in = \schoolgroupZZStart,
+%  end/.estore in = \schoolgroupZZend,
+%  major/.estore in = \schoolgroupZZmajor,
+%  url/.estore in = \schoolgroupZZurl,
+%  name/.estore in = \schoolgroupZZname,
+%  minor/.estore in = \schoolgroupZZminor,
+%  gpa/.estore in = \schoolgroupZZgpa,
+% }
+\newcommand {\schoolgroup} [7] {
+    % \pgfkeys{/schoolgroup,default,#1}%schoolgroupZZStart
+    \tabbedblock {
+        \textbf {#1-#2}
+            \> #3 - \href {#4} {#5} \\  [5pt]
+            \> #6 \\
+            \> GPA: #7 \\
+    }
+}
+
+% \newcommand {\schoolgroup} [2]
+
+
+% \pgfkeys{
+%  /schoolgroup/.is family, /schoolgroup,
+%  start/.estore in = \schoolgroupValue,
+%  color/.estore in = \schoolgroupColor,
+% }
+
+% % \pgfkeys {
+% % /schoolgroup/.is family, /schoolgroup,
+% % start/.estore in = \schoolgroupStart
+% % %  end/.estore in = \schoolgroupZZend,
+% % %  major/.estore in = \schoolgroupZZmajor,
+% % %  url/.estore in = \schoolgroupZZurl,
+% % %  name/.estore in = \schoolgroupZZname,
+% % %  minor/.estore in = \schoolgroupZZminor,
+% % %  gpa/.estore in = \schoolgroupZZgpa
+% % }
+% \newcommand {\schoolgroup} [1] [] {
+%     \pgfkeys{/schoolgroup,#1}
+%     \tabbedblock {
+%         \textbf {\schoolgroupStart}
+%     }
+% }
+
+\newcommand {\job} [6] {
+    \begin {tabbing}
+        \hspace {3cm} \= \kill
+        \textbf {#1} \> \href {#4} {#3} \\
+        \textbf {#2} \>\+ \textit {#5} \\
+        \begin {minipage} {\smallertextwidth}
+            \vspace{2mm}
+            #6
+        \end {minipage}
+    \end {tabbing}
+    \vspace {2mm}
+}
+
+\newcommand {\skillgroup} [2] {
+    \begin {tabbing}
+        \hspace {5mm} \= \kill
+        \sqbullet \>\+ \textbf {#1} \\
+        \begin {minipage} {\smallertextwidth}
+            \vspace {2mm}
+            #2
+        \end {minipage}
+    \end {tabbing}
+}
+
+\newcommand {\interestsgroup} [1] {
+    \begin {tabbing}
+        \hspace {5mm} \= \kill
+        #1
+    \end {tabbing}
+    \vspace {-10mm}
+}
+
+\newcommand {\interest} [1] { % Define a custom command for individual interests
+    \sqbullet
+        \> \textbf{#1} \\ [3pt]
+}

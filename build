@@ -9,8 +9,12 @@ BUILD_DIR="${ROOT_DIR}/out"
 # Ensure the buil directory exists
 mkdir -p "${BUILD_DIR}"
 
-xelatex \
-    -output-directory="${BUILD_DIR}" \
-    -halt-on-error \
-    -interaction=nonstopmode \
-    "${ROOT_DIR}/src/main.tex"
+(
+    cd "${ROOT_DIR}/src"
+
+    xelatex \
+        -output-directory="${BUILD_DIR}" \
+        -halt-on-error \
+        -interaction=nonstopmode \
+        main
+)

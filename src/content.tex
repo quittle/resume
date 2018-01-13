@@ -15,8 +15,7 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title{Dustin Toff} % Print the main header
-
+\title {Dustin Toff} % Print the main header
 
 \parbox {0.5\textwidth} { % First block
     \begin {tabbing} % Enables tabbing
@@ -24,7 +23,6 @@
         {\bf Address} \> 151 John St, APT 5G\\ % Address line 1
         \> Seattle, WA 98109 \\ % Address line 2
     \end {tabbing}
-
 }
 \hfill % Horizontal space between the two blocks
 \parbox {0.5\textwidth} { % Second block
@@ -36,117 +34,16 @@
 }
 
 
-\section {Personal Profile}
+\sectionblock {Personal Profile} {\input {sections/personal}}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum nec dolor sed sagittis. Cras justo lorem, volutpat mattis lacus vel, consequat aliquam quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer blandit, massa at tincidunt ornare, dolor magna interdum felis, ac blandit urna neque in turpis.
+\sectionblock {Education} {\input {sections/education}}
 
-\section {Education}
-
-\tabbedblock {
-    \textbf {2010-2014}
-        \> Bachelor of Science in Computer Science - \href {https://www.umbc.edu/} {University of Maryland Baltimore County} \\ [5pt]
-        \> Minor in Economics \\
-        \> GPA: 3.544 \\
-}
-
-
-\section{Employment History}
-
-\job
-{Summer 2013}{}
-{Amazon.com}
-{https://amazon.com}
-{Software Development Engineer Intern}
-{Designed and implemented an interntal service for receiving and storing pageview metrics}
-
-\job
-{2014 -}{2016}
-{AWS Silk}
-{http://docs.aws.amazon.com/silk/latest/developerguide/introduction.html}
-{Software Development Engineer I-II}
-{??}
-
-\job
-{2016 -}{2017}
-{Amazon Shopping App}
-{https://amazon.com/gp/feature.html?docId=1000625601}
-{Software Development Engineer II}
-{??}
-
-\job
-{2017 -}{Present}
-{AWS}
-{https://aws.amazon.com}
-{Software Development Engineer II}
-{??}
+\sectionblock {Employment History} {\input {sections/employment}}
 
 % NO UPDATED CONTENT BELOW
 
-\section{Software Engineering Skills}
+\sectionblock {Software Engineering Experience} {\input {sections/software-skills}}
 
-\skillgroup{Programming Languages}
-{
-\textit{Ruby} - MRI 1.8.7, 1.9.2\\
-\textit{ASP.NET, C\#, VB.NET}\\
-\textit{PHP}\\
-\textit{Java/Scala}
-}
+\sectionblock {Interests} {\input {sections/interests}}
 
-%------------------------------------------------
-
-\skillgroup{Web Development}
-{
-\textit{HTML5, CSS3/SASS, JavaScript/CoffeeScript/jQuery}\\
-\textit{Ruby on Rails v3.1}\\
-\textit{Test:Unit, RSpec, Cucumber, Selenium} - automated testing frameworks\\
-\textit{Apache/Nginx Web Servers}
-}
-
-%------------------------------------------------
-
-\skillgroup{Miscellaneous}
-{
-\textit{Microsoft SQL Server 2000/2005} - database architecture and administration\\
-\textit{Transact-SQL} - data definition and manipulation\\
-\textit{SQL Profiler} - performance tuning and debugging\\
-\textit{MySQL Server}\\
-\textit{CVS, DARCS, git} - source version control
-}
-
-%----------------------------------------------------------------------------------------
-%	INTERESTS SECTION
-%----------------------------------------------------------------------------------------
-
-\section{Interests}
-
-\interestsgroup{
-\interest{Badminton, Tennis, Running, Cycling, Sailing}
-\interest{Travelling}
-\interest{Creative Writing}
-\interest{Photography}
-\interest{Car Mechanics}
-}
-
-%----------------------------------------------------------------------------------------
-%	REFEREE SECTION
-%----------------------------------------------------------------------------------------
-
-\section{Referees}
-
-\parbox{0.5\textwidth}{ % First block
-\begin{tabbing}
-\hspace{2.75cm} \= \hspace{4cm} \= \kill % Spacing within the block
-{\bf Name} \> Bill Lumbergh \\ % Referee name
-{\bf Company} \> Initech Inc. \\ % Referee company
-{\bf Position} \> Vice President \\ % Referee job title
-{\bf Contact} \> \href{mailto:bill@initech.com}{bill@initech.com} % Referee contact information
-\end{tabbing}}
-\hfill % Horizontal space between the two blocks
-\parbox{0.5\textwidth}{ % Second block
-\begin{tabbing}
-\hspace{2.75cm} \= \hspace{4cm} \= \kill % Spacing within the block
-{\bf Name} \> Michael "Big Mike" Tucker\\ % Referee name
-{\bf Company} \> Burbank Buy More \\ % Referee company
-{\bf Position} \> Store Manager \\ % Referee job title
-{\bf Contact} \> \href{mailto:mike@buymore.com}{mike@buymore.com} % Referee contact information
-\end{tabbing}}
+\sectionblock {References} {\input {sections/references}}

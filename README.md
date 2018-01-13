@@ -8,14 +8,15 @@
 This resume is written in LaTeX and builds with xelatex.
 
 ```bash
-# Install system packages
+# Install required system packages
 sudo apt-get install -y \
-    texlive-latex-base \
-    xzdec \
-    texlive-fonts-recommended \
+    lmodern \
     texlive-font-utils \
+    texlive-fonts-recommended \
+    texlive-latex-base \
     texlive-latex-extra \
-    texlive-xetex
+    texlive-xetex \
+    xzdec
 
 # Build the resume
 ./build

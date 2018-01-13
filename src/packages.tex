@@ -1,0 +1,19 @@
+\usepackage [ % Use A4 paper and set margins
+    a4paper,
+    hmargin = 25mm,
+    vmargin = 30mm,
+    top = 20mm
+] {geometry}
+\usepackage {pgfkeys} % Support named options for long macros
+\usepackage {ifthen} % Easy support for if-then-else statements
+\usepackage {fancyhdr} % Customize the header and footer
+\usepackage {hyperref} % Colors for links, text and headings
+\usepackage [T1] {fontenc} % Output font encoding for international characters
+\usepackage {fontspec} % Required for specification of custom fonts
+\usepackage {color} % Required for custom colors
+\usepackage {sectsty} % Allows customization of titles
+\usepackage {ifxetex} % Support for \ifxetex
+
+\ifxetex \else
+    \usepackage [utf8] {inputenc} % Required for inputting international characters. XeTeX is utf8 by default and fails if imported.
+\fi

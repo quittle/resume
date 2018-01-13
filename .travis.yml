@@ -1,12 +1,12 @@
 addons:
     apt:
         packages:
-            - texlive-latex-base
-            - xzdec
-            - texlive-fonts-recommended
+            - lmodern
             - texlive-font-utils
+            - texlive-fonts-recommended
+            - texlive-latex-base
             - texlive-latex-extra
             - texlive-xetex
-            - lmodern
+            - xzdec
 script:
     - ./build

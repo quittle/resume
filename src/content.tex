@@ -15,24 +15,19 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title {Dustin Toff} % Print the main header
+\title [
+    first = Dustin,
+    middle = Robert,
+    last = Toff,
+]
 
-\parbox {0.5\textwidth} { % First block
-    \begin {tabbing} % Enables tabbing
-        \hspace{3cm} \= \hspace{4cm} \= \kill % Spacing within the block
-        {\bf Address} \> 151 John St, APT 5G\\ % Address line 1
-        \> Seattle, WA 98109 \\ % Address line 2
-    \end {tabbing}
-}
-\hfill % Horizontal space between the two blocks
-\parbox {0.5\textwidth} { % Second block
-    \begin {tabbing} % Enables tabbing
-        \hspace{3cm} \= \hspace{4cm} \= \kill % Spacing within the block
-        {\bf Email} \> \email{me@dustintoff.com} \\ % Email address
-        {\bf Cell} \> +1 (724) 638 7892 \\ % Mobile phone
-    \end {tabbing}
-}
-
+\contactgroup [
+    city = Seattle,
+    state = WA,
+    zipcode = 98109,
+    email = me@dustintoff.com,
+    phone = +1 (724) 638-7892,
+]
 
 \sectionblock {Personal Profile} {\input {sections/personal}}
 

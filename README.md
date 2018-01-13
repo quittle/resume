@@ -11,6 +11,7 @@ This resume is written in LaTeX and builds with xelatex.
 # Install required system packages
 sudo apt-get install -y \
     lmodern \
+    pgf \
     texlive-font-utils \
     texlive-fonts-recommended \
     texlive-latex-base \

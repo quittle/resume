@@ -10,9 +10,10 @@ addons:
             - texlive-xetex
             - xzdec
 script:
-    - "./build"
+    - ./build
 deploy:
     provider: releases
     api_key:
         secure: VWDJLGtO515jaHXt72cCjiUKiPAAPU4HXCaMd2C2ngR5eKlW1IOfsWxNqlGa0Hk88KeZdR2uykrd0Yy3WFKoLHVIaC3JNaEOvrLRYQRUIx8cjM/6PlQywDY61z9PLST5jfBhWaINigyHhd6SZMKYhD+XVrBoT9gYCJXnbkKcMGqkuRhbaaxXCly742FPQoYABWlR1Ka1Q2YR5XHdPoIhbo8r22rBanvegcSIDSoFpBFa0R4kKfjPLKDnAii6y32H0lvA4lju52SA9Yj37DO6SnnIaO0KrFz7wAraOF4GmNFM63VF6bsNu5wVT+gW177FdywBLt3f/HRg02JyZw5xDigr+YGvcBJ7aU3QBFwUtSu065ukyd+kdPxg4tJXS5Q7OKVeflfakvYd9G2Bjf9lg8lscbdEolMQIjLDYCSNG+tudCLL2isw3Ov81nWfL/UWIABTaidp1hYPHWQqT7jJ4il5Nu8Me3KTuM5B4/lJ5qdZP8ZLalAkQqNThxjMYLjPoAq48q7gniN6E3fJkaYnP/UL3e/KZtdTnuzLbATEdtzpnUPnZj3Z2lA2rBZK9CUbQUBN3ICSr/x2RV0rBeSza9MWgI3wDmuAKrLFVagS0Eokl3cOhb3At/G2BsxCF87GtmovDRDAM7gRmXXVEzIm7hb19nSW5OMAtoUsJVHtjjk=
     file: out/main.pdf
+    skip_cleanup: true

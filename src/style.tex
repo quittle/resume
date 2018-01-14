@@ -6,7 +6,7 @@
 }
 \renewcommand {\title} [3] [] {
     \pgfkeys{/title,#1}
-    {\huge {\color {slateblue} \textbf {\title@first \title@last} }} \\ % Header section name and color
+    {\huge {\color {slateblue} \textbf {\title@first\ \title@last} }} \\ % Header section name and color
     \rule {\textwidth} {0.5mm} % Rule under the header
 }
 
@@ -16,89 +16,51 @@
     state/.estore in = \contactgroup@state,
     zipcode/.estore in = \contactgroup@zipcode,
     email/.estore in = \contactgroup@email,
-    phone/.estore in = \contactgroup@phone,
+    phone/.estore in = \contactgroup@phone
 }
-\newcommand {\contactgroup} [3] [] {
+\newcommand {\contactgroup} [5] [] {
     \pgfkeys{/contactgroup,#1}
 
     \parbox {0.5\textwidth} { % First block
-        \begin {tabbing} % Enables tabbing
+        \begin {tabbing}
             \hspace{3cm} \= \hspace{4cm} \= \kill % Spacing within the block
             {\bf Location} \> \contactgroup@city, \contactgroup@state \\
-            \\
+            \\ % Blank line
         \end {tabbing}
     }
     \hfill % Horizontal space between the two blocks
     \parbox {0.5\textwidth} { % Second block
-        \begin {tabbing} % Enables tabbing
+        \begin {tabbing}
             \hspace{3cm} \= \hspace{4cm} \= \kill % Spacing within the block
-            {\bf Email} \> \email{\contactgroup@email} \\ % Email address
+            {\bf Email} \> \email {\contactgroup@email} \\ % Email address
             {\bf Cell}  \> \contactgroup@phone \\ % Mobile phone
         \end {tabbing}
-    } \\
-}
-
-% \pgfkeys{
-%  /test/.is family, /test,
-%  value/.estore in = \testValue,
-%  color/.estore in = \testColor,
-% }
-% \newcommand {\test} [2] [] {
-%     \pgfkeys{/test, #1}
-%  the value is \testValue and the color is \testColor
-% }
-
-% \pgfkeys{
-%  /schoolgroup/.is family, /schoolgroup,
-%  start/.estore in = \schoolgroupZZStart,
-%  end/.estore in = \schoolgroupZZend,
-%  major/.estore in = \schoolgroupZZmajor,
-%  url/.estore in = \schoolgroupZZurl,
-%  name/.estore in = \schoolgroupZZname,
-%  minor/.estore in = \schoolgroupZZminor,
-%  gpa/.estore in = \schoolgroupZZgpa,
-% }
-\newcommand {\schoolgroup} [7] {
-    % \pgfkeys{/schoolgroup,default,#1}%schoolgroupZZStart
-    \tabbedblock {
-        \textbf {#1-#2}
-            \> #3 - \href {#4} {#5} \\  [5pt]
-            \> #6 \\
-            \> GPA: #7 \\
     }
 }
 
-% \newcommand {\schoolgroup} [2]
-
-
-% \pgfkeys{
-%  /schoolgroup/.is family, /schoolgroup,
-%  start/.estore in = \schoolgroupValue,
-%  color/.estore in = \schoolgroupColor,
-% }
-
-% % \pgfkeys {
-% % /schoolgroup/.is family, /schoolgroup,
-% % start/.estore in = \schoolgroupStart
-% % %  end/.estore in = \schoolgroupZZend,
-% % %  major/.estore in = \schoolgroupZZmajor,
-% % %  url/.estore in = \schoolgroupZZurl,
-% % %  name/.estore in = \schoolgroupZZname,
-% % %  minor/.estore in = \schoolgroupZZminor,
-% % %  gpa/.estore in = \schoolgroupZZgpa
-% % }
-% \newcommand {\schoolgroup} [1] [] {
-%     \pgfkeys{/schoolgroup,#1}
-%     \tabbedblock {
-%         \textbf {\schoolgroupStart}
-%     }
-% }
+\newcommand {\schoolgroup} [7] {
+    \tabbedblock {
+        \textbf {
+            Graduated #1
+        }
+            \> #2 - \href {#3} {#4} \\ [5pt]
+            \> \parbox {0.5\textwidth} { % First block
+                    #5
+                }
+            \hfill % Horizontal space between the two blocks
+            \parbox {0.5\textwidth} { % Second block
+                \begin {flushright}
+                   GPA: #6
+                \end {flushright}
+            }
+    }
+}
 
 \newcommand {\job} [6] {
     \begin {tabbing}
         \hspace {3cm} \= \kill
-        \textbf {#1} \ifthenelse {\equal {#2} {} } {} {-} \> \href {#4} {#3} \\
-        \textbf {#2} \>\+ \textit {#5} \\
+        \textbf {#1} \ifthenelse {\equal {#2} {} } {} {-} \> \href {#4} {#3} - \textit {#5} \\
+        \textbf {#2} \\
         \begin {minipage} {\smallertextwidth}
             \vspace{2mm}
             #6

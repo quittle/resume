@@ -6,7 +6,7 @@ ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 BUILD_DIR="${ROOT_DIR}/out"
 
-# Ensure the buil directory exists
+# Ensure the build directory exists
 mkdir -p "${BUILD_DIR}"
 
 (

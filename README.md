@@ -21,4 +21,7 @@ sudo apt-get install -y \
 
 # Build the resume
 ./build
+
+# Perform additional checks and linting
+./check
 ```

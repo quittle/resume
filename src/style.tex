@@ -40,18 +40,16 @@
 
 \newcommand {\schoolgroup} [7] {
     \tabbedblock {
-        \textbf {
-            Graduated #1
-        }
+        \textbf { #1 }
             \> #2 - \href {#3} {#4} \\ [5pt]
             \> \parbox {0.5\textwidth} { % First block
                     #5
                 }
             \hfill % Horizontal space between the two blocks
             \parbox {0.5\textwidth} { % Second block
-                \begin {flushright}
+                % \begin {flushright}
                    GPA: #6
-                \end {flushright}
+                % \end {flushright}
             }
     }
 }
@@ -70,14 +68,16 @@
 }
 
 \newcommand {\skillgroup} [2] {
-    \begin {tabbing}
-        \hspace {5mm} \= \kill
-        \sqbullet \>\+ \textbf {#1} \\
-        \begin {minipage} {\smallertextwidth}
-            \vspace {2mm}
-            #2
-        \end {minipage}
-    \end {tabbing}
+    \begin {minipage} {0.2\textwidth}
+        \begin {tabbing}
+            \hspace {5mm} \= \kill
+            \sqbullet \>\+ \textbf {#1} \\
+            \begin {minipage} {\smallertextwidth}
+                \vspace {2mm}
+                #2
+            \end {minipage}
+        \end {tabbing}
+    \end {minipage}
 }
 
 \newcommand {\interestsgroup} [1] {
@@ -88,7 +88,18 @@
     \vspace {-10mm}
 }
 
-\newcommand {\interest} [1] { % Define a custom command for individual interests
+\newcommand {\interest} [1] {
     \sqbullet
         \> \textbf{#1} \\ [3pt]
+}
+
+\newcommand {\personalProject} [4] {
+    \textbf {
+        {\ifthenelse
+            {\equal {#1} {} }
+            {#2}
+            {\href {#1} {#2}}
+        }
+    }
+    #4
 }

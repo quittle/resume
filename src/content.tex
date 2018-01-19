@@ -1,24 +1,45 @@
-\title [
-    first = Dustin,
-    middle = Robert,
-    last = Toff,
-]
+% \title [
+%     first = Dustin,
+%     middle = Robert,
+%     last = Toff,
+% ]
 
-\kill
+% \kill
 
-\contactgroup [
-    city = Seattle,
-    state = WA,
-    zipcode = 98109,
+% \contactgroup [
+%     city = Seattle,
+%     state = WA,
+%     zipcode = 98109,
+%     email = me@dustintoff.com,
+%     phone = +1 (724) 638-7892
+% ]
+
+\customHeader [
+    firstName = Dustin,
+    lastName = Toff,
     email = me@dustintoff.com,
-    phone = +1 (724) 638-7892
+    phone = +1 (724) 638-7893,
+    website = dustintoff.com,
+    websiteLink = http://dustintoff.com,
+    githubUser = quittle,
 ]
 
-\input {sections/personal}
+% \kill
+
+% \subimport* {sections/} {personal}
+
+% \input {sections/personalasdfkjasdl}
+
+% \sectionblock {Education} {\input {sections/personal}}
+\parbox {\textwidth} {
+    Hi, I'm Dustin Toff. I'm a software developer currently working on a new, unreleased AWS service.
+    \\~\\
+    I enjoy working on side projects in my spare time. Some of my more interesting projects include a compression program that uses math to calculate the original file, a programming game written in JavaScript where you program robots to gather resources, fight, and build other robots autonomously, and a CSS compiler that runs in JavaScript client side.
+}
 
 \sectionblock {Education} {\input {sections/education}}
 
-\sectionblock {Employment History} {\input {sections/employment}}
+\sectionblock {Work Experience} {\input {sections/employment}}
 
 \sectionblock {Personal Projects} {\input {sections/personal-projects}}
 

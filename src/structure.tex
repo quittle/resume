@@ -76,3 +76,13 @@
 \newcommand {\email} [1] {
     \href {mailto:#1} {#1}
 }
+
+\newenvironment {rtabbing}
+    {
+        \begin {flushright}
+        \begin {tabbing}
+    }
+    {
+        \end {tabbing}
+        \end {flushright}
+    }

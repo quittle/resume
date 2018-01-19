@@ -1,4 +1,30 @@
 \pgfkeys {
+    /customHeader/.is family, /customHeader,
+    firstName/.estore in = \customHeader@firstName,
+    lastName/.estore in = \customHeader@lastName,
+    email/.estore in = \customHeader@email,
+    phone/.estore in = \customHeader@phone,
+    website/.estore in = \customHeader@website,
+    websiteLink/.estore in = \customHeader@websiteLink,
+    githubUser/.estore in = \customHeader@githubUser,
+}
+\newcommand {\customHeader} [7] [] {
+    \pgfkeys{/customHeader,#1}
+    \parbox {0.5\textwidth} {
+        {\huge {\color {slateblue} \textbf {\customHeader@firstName\ \customHeader@lastName} }} \\ % Header section name and color
+    }
+    \hfill
+    \parbox {0.5\textwidth} {
+        \begin {rtabbing}
+            % \hspace{1cm} \= \hspace{1cm} \\% \= \kill % Spacing within the block
+            \customHeader@email \hspace{0.5cm} \= \customHeader@phone \\
+            \href {\customHeader@websiteLink} {\customHeader@website} \> \href {https://github.com/\customHeader@githubUser} {github.com/\customHeader@githubUser} \\
+        \end {rtabbing}
+    }
+    \rule {\textwidth} {0.5mm} % Rule under the header
+}
+
+\pgfkeys {
     /title/.is family, /title,
     first/.estore in = \title@first,
     middle/.estore in = \title@middle,
@@ -40,23 +66,21 @@
 
 \newcommand {\schoolgroup} [7] {
     \tabbedblock {
-        \textbf { #1 }
-            \> #2 - \href {#3} {#4} \\ [5pt]
+        \textbf {#1}
+            \> \textit {#2} - \href {#3} {#4} \\ [5pt]
             \> \parbox {0.5\textwidth} { % First block
                     #5
                 }
             \hfill % Horizontal space between the two blocks
             \parbox {0.5\textwidth} { % Second block
-                % \begin {flushright}
                    GPA: #6
-                % \end {flushright}
             }
     }
 }
 
 \newcommand {\job} [6] {
     \begin {tabbing}
-        \hspace {3cm} \= \kill
+        \hspace {2cm} \= \kill
         \textbf {#1} \ifthenelse {\equal {#2} {} } {} {-} \> \href {#4} {#3} - \textit {#5} \\
         \textbf {#2} \\
         \begin {minipage} {\smallertextwidth}

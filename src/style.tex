@@ -67,7 +67,7 @@
 \newcommand {\schoolgroup} [7] {
     \tabbedblock {
         \textbf {#1}
-            \> \textit {#2} - \href {#3} {#4} \\ [5pt]
+            \> \textit {#2} \spaceendash \href {#3} {#4} \\ [5pt]
             \> \parbox {0.5\textwidth} { % First block
                     #5
                 }
@@ -81,7 +81,7 @@
 \newcommand {\job} [6] {
     \begin {tabbing}
         \hspace {2cm} \= \kill
-        \textbf {#1} \ifthenelse {\equal {#2} {} } {} {-} \> \href {#4} {#3} - \textit {#5} \\
+        \textbf {#1} \ifthenelse {\equal {#2} {} } {} {-} \> \href {#4} {#3} \spaceendash \textit {#5} \\
         \textbf {#2} \\
         \begin {minipage} {\smallertextwidth}
             \vspace{2mm}

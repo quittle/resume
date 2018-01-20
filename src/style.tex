@@ -24,46 +24,6 @@
     \rule {\textwidth} {0.5mm} % Rule under the header
 }
 
-\pgfkeys {
-    /title/.is family, /title,
-    first/.estore in = \title@first,
-    middle/.estore in = \title@middle,
-    last/.estore in = \title@last,
-}
-\renewcommand {\title} [3] [] {
-    \pgfkeys{/title,#1}
-    {\huge {\color {slateblue} \textbf {\title@first\ \title@last} }} \\ % Header section name and color
-    \rule {\textwidth} {0.5mm} % Rule under the header
-}
-
-\pgfkeys {
-    /contactgroup/.is family, /contactgroup,
-    city/.estore in = \contactgroup@city,
-    state/.estore in = \contactgroup@state,
-    zipcode/.estore in = \contactgroup@zipcode,
-    email/.estore in = \contactgroup@email,
-    phone/.estore in = \contactgroup@phone
-}
-\newcommand {\contactgroup} [5] [] {
-    \pgfkeys{/contactgroup,#1}
-
-    \parbox {0.5\textwidth} { % First block
-        \begin {tabbing}
-            \hspace{3cm} \= \hspace{4cm} \= \kill % Spacing within the block
-            {\bf Location} \> \contactgroup@city, \contactgroup@state \\
-            \\ % Blank line
-        \end {tabbing}
-    }
-    \hfill % Horizontal space between the two blocks
-    \parbox {0.5\textwidth} { % Second block
-        \begin {tabbing}
-            \hspace{3cm} \= \hspace{4cm} \= \kill % Spacing within the block
-            {\bf Email} \> \email {\contactgroup@email} \\ % Email address
-            {\bf Cell}  \> \contactgroup@phone \\ % Mobile phone
-        \end {tabbing}
-    }
-}
-
 \newcommand {\schoolgroup} [7] {
     \tabbedblock {
         \textbf {#1}
@@ -83,38 +43,12 @@
         \hspace {2cm} \= \kill
         \textbf {#1} \ifthenelse {\equal {#2} {} } {} {-} \> \href {#4} {#3} \spaceendash \textit {#5} \\
         \textbf {#2} \\
-        \begin {minipage} {\smallertextwidth}
+        \parbox {\textwidth} {
             \vspace{2mm}
             #6
-        \end {minipage}
+        }
     \end {tabbing}
     \vspace {2mm}
-}
-
-\newcommand {\skillgroup} [2] {
-    \begin {minipage} {0.2\textwidth}
-        \begin {tabbing}
-            \hspace {5mm} \= \kill
-            \sqbullet \>\+ \textbf {#1} \\
-            \begin {minipage} {\smallertextwidth}
-                \vspace {2mm}
-                #2
-            \end {minipage}
-        \end {tabbing}
-    \end {minipage}
-}
-
-\newcommand {\interestsgroup} [1] {
-    \begin {tabbing}
-        \hspace {5mm} \= \kill
-        #1
-    \end {tabbing}
-    \vspace {-10mm}
-}
-
-\newcommand {\interest} [1] {
-    \sqbullet
-        \> \textbf{#1} \\ [3pt]
 }
 
 \newcommand {\personalProject} [4] {

@@ -52,12 +52,11 @@
 }
 
 \newcommand {\personalProject} [4] {
-    \textbf {
-        {\ifthenelse
-            {\equal {#1} {} }
+    \textbf {%
+        \ifthenelse
+            {\equal {#1} {}}
             {#2}
             {\href {#1} {#2}}
-        }
     }
     #4
 }

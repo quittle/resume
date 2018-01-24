@@ -90,3 +90,13 @@
         \end {tabbing}
         \end {flushright}
     }
+
+\newenvironment {minimalItemize}
+    {
+        \begin {itemize}
+            \setlength {\itemsep} {0pt}
+            \setlength {\parskip} {0pt}
+    }
+    {
+        \end {itemize}
+    }

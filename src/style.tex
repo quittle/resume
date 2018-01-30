@@ -42,11 +42,10 @@
         \hspace {2.5cm} \= \kill
         \textbf {#1} \ifthenelse {\equal {#2} {} } {} {-} \textbf {#2} \> \href {#4} {#3} \spaceendash \textit {#5} \\
         \parbox {\textwidth} {
-            \vspace{2mm}
+            \vspace{1mm}
             #6
         }
     \end {tabbing}
-    \vspace {2mm}
 }
 
 \newcommand {\personalProject} [4] {
@@ -57,4 +56,5 @@
             {\href {#1} {#2}}
     }
     #4
+    \vspace {2mm}
 }

@@ -17,11 +17,9 @@
     \hfill
     \parbox {0.5\textwidth} {
         \begin {rtabbing}
-            % \hspace{1cm} \= \hspace{1cm} \\% \= \kill % Spacing within the block
             \customHeader@email \hspace{0.5cm} \= \hfill {\raggedleft \href {\customHeader@websiteLink} {\customHeader@website}} \\
             \customHeader@phone \> \href {https://github.com/\customHeader@githubUser} {github.com/\customHeader@githubUser}
         \end {rtabbing}
-        % \vspace{\fill}
     }
     \rule {\textwidth} {0.5mm} % Rule under the header
 }
@@ -30,21 +28,19 @@
     \tabbedblock {
         \textbf {#1}
             \> \textit {#2} \spaceendash \href {#3} {#4} \\ [5pt]
-            \> \parbox {0.5\textwidth} { % First block
-                    #5
+            \> \parbox {0.27\textwidth} { % First block
+                    \textit {#5}
                 }
-            \hfill % Horizontal space between the two blocks
             \parbox {0.5\textwidth} { % Second block
-                   GPA: #6
+                GPA: #6
             }
     }
 }
 
 \newcommand {\job} [6] {
     \begin {tabbing}
-        \hspace {2cm} \= \kill
-        \textbf {#1} \ifthenelse {\equal {#2} {} } {} {-} \> \href {#4} {#3} \spaceendash \textit {#5} \\
-        \textbf {#2} \\
+        \hspace {2.5cm} \= \kill
+        \textbf {#1} \ifthenelse {\equal {#2} {} } {} {-} \textbf {#2} \> \href {#4} {#3} \spaceendash \textit {#5} \\
         \parbox {\textwidth} {
             \vspace{2mm}
             #6

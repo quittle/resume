@@ -93,10 +93,12 @@
 
 \newenvironment {minimalItemize}
     {
+        \begin {multicols} {2}
         \begin {itemize}
             \setlength {\itemsep} {0pt}
             \setlength {\parskip} {0pt}
     }
     {
         \end {itemize}
+        \end {multicols}
     }

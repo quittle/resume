@@ -3,14 +3,18 @@ addons:
         packages:
             - lmodern
             - pgf
+            - python
             - texlive-font-utils
             - texlive-fonts-recommended
             - texlive-latex-base
             - texlive-latex-extra
             - texlive-xetex
             - xzdec
+install:
+    - pip install pdfx
 script:
     - ./build
+    - ./check_links
 before_deploy:
     - cp out/main.pdf "Dustin Toff Resume.pdf"
 deploy:

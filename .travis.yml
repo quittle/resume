@@ -3,7 +3,6 @@ addons:
         packages:
             - lmodern
             - pgf
-            - python
             - texlive-font-utils
             - texlive-fonts-recommended
             - texlive-latex-base
@@ -11,7 +10,7 @@ addons:
             - texlive-xetex
             - xzdec
 install:
-    - pip install pdfx
+    - pip install --user pdfx
 script:
     - ./build
     - ./check_links

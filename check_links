@@ -12,7 +12,7 @@ pdfx --json out/main.pdf | \
             "${line}" \
             --output /dev/null)"
         echo "${http_code}"
-        if [ "${http_code}" != '200' ]; then
+        if [ "${http_code}" != 200 ]; then
             echo 'Failed to load url!'
             exit 1
         fi

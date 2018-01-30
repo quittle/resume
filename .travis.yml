@@ -14,6 +14,7 @@ install:
 script:
     - ./build
     - ./check_links
+    - ./check_pages
 before_deploy:
     - cp out/main.pdf "Dustin Toff Resume.pdf"
 deploy:

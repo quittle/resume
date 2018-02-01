@@ -1,0 +1,20 @@
+#!/bin/bash -e
+
+CUR_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+invalid_words="$( \
+    pdftotext 'out/main.pdf' - | \
+    aspell \
+        --mode=tex \
+        --lang=en_US \
+        --add-extra-dicts="${CUR_DIR}/spellcheck-good.txt" \
+        list | \
+    sort | \
+    uniq
+)"
+
+if [ -n "${invalid_words}" ]; then
+    echo "Invalid words found"
+    echo "${invalid_words}"
+    exit 1
+fi

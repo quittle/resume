@@ -1,14 +1,6 @@
-#!/bin/bash
+#!/bin/bash -ex
 
-set -e
-
-ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
-(
-    cd "${ROOT_DIR}/src"
-
-    chktex \
-        --nowarn=1 \
-        --headererr=1 \
-        main
-)
+./checks/check_links
+./checks/check_pages
+./checks/check_spelling
+./checks/lint

@@ -1,8 +1,10 @@
 addons:
     apt:
         packages:
+            - aspell
             - lmodern
             - pgf
+            - poppler-utils # pdftotext
             - texlive-font-utils
             - texlive-fonts-recommended
             - texlive-latex-base
@@ -13,8 +15,7 @@ install:
     - pip install --user pdfx
 script:
     - ./build
-    - ./check_links
-    - ./check_pages
+    - ./check
 before_deploy:
     - cp out/main.pdf "Dustin Toff Resume.pdf"
 deploy:

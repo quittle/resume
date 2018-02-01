@@ -1,0 +1,13 @@
+#!/bin/bash -e
+
+CUR_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+(
+    cd "${CUR_DIR}/../src"
+
+    chktex \
+        --headererr=1 \
+        --nowarn=1 \
+        --verbosity=2 \
+        main
+)

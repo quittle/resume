@@ -15,6 +15,17 @@
 
 \setcounter{secnumdepth}{0} % Suppress section numbering
 
+\defaultfontfeatures {
+    Ligatures = {
+        NoCommon,
+        NoRequired,
+        NoContextual,
+        NoHistoric,
+        NoDiscretionary,
+        TeX,
+    }
+}
+
 \setmainfont [
     Path = fonts/erewhon/,
     Extension = .otf,
@@ -23,7 +34,7 @@
     BoldItalicFont = Erewhon-BoldItalic,
     SmallCapsFeatures = {
         Letters = SmallCaps
-    }
+    },
 ] {Erewhon-Regular}
 
 \definecolor {slateblue} {rgb} {0.17,0.22,0.34}

@@ -1,7 +1,8 @@
 addons:
     apt:
         packages:
-            - aspell
+            - aspell-en
+            - chktex
             - lmodern
             - pgf
             - poppler-utils # pdftotext

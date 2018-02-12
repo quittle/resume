@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash
 
 pdfx --json out/main.pdf | \
     python -c "import json; import sys; print('\n'.join(json.load(sys.stdin)['references']['url']))" | \

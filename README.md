@@ -1,7 +1,6 @@
-# Welcome to Dustin Toff's Resume
-### *Still in progress...*
+# Welcome to Dustin Toff's Resume [![Build Status](https://travis-ci.com/quittle/resume.svg?branch=master)](https://travis-ci.com/quittle/resume)
 
-[![Build Status](https://travis-ci.org/quittle/resume.svg?branch=master)](https://travis-ci.org/quittle/resume)
+[Click here](https://github.com/quittle/resume/releases/latest/download/Dustin.Toff.Resume.pdf) for the latest copy of my resume!
 
 ### Developing
 
@@ -10,14 +9,16 @@ This resume is written in LaTeX and builds with xelatex.
 ```bash
 # Install required system packages
 sudo apt-get install -y \
+    chktex \
     lmodern \
-    pgf \
     texlive-font-utils \
     texlive-fonts-recommended \
     texlive-latex-base \
     texlive-latex-extra \
     texlive-xetex \
     xzdec
+
+pip install pdfx
 
 # Build the resume
 ./build

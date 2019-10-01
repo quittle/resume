@@ -6,8 +6,11 @@ CUR_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
     cd "${CUR_DIR}/../src"
 
     chktex \
+        -wall \
         --headererr=1 \
         --nowarn=1 \
+        --nowarn=22 \
+        --nowarn=30 \
         --verbosity=2 \
         main
 )

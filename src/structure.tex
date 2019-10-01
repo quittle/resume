@@ -80,6 +80,11 @@
     #2
 }
 
+% The following comments are required to prevent extra whitespace being injected around the links
+\newcommand {\coloredlink} [2] {%
+    {\color {slateblue} \href {#1} {#2}}%
+}
+
 \newcommand {\link} [1] {
     \href {#1} {#1}
 }

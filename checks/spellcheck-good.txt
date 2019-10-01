@@ -11,3 +11,4 @@ TTF
 glyphs
 minifier
 videographer
+integrations

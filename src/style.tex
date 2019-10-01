@@ -10,15 +10,15 @@
 }
 \newcommand {\customHeader} [7] [] {
     \pgfkeys {/customHeader,#1}
-    \parbox {0.5\textwidth} {
+    \parbox {0.3\textwidth} {
         \vspace {0.3cm}
         {\Huge {\color {slateblue} \textbf {\customHeader@firstName\ \customHeader@lastName} }} \\ % Header section name and color
     }
     \hfill
-    \parbox {0.5\textwidth} {
+    \parbox {\textwidth} {
         \begin {rtabbing}
-            \customHeader@email \hspace{0.5cm} \= \hfill {\raggedleft \href {\customHeader@websiteLink} {\customHeader@website}} \\
-            \customHeader@phone \> \href {https://github.com/\customHeader@githubUser} {github.com/\customHeader@githubUser}
+            \hspace{2.6cm} \= \customHeader@email \= \hspace{0.3cm} \= \hfill {\raggedleft \href {\customHeader@websiteLink} {\customHeader@website}} \\
+            \customHeader@phone \> \> \> \href {https://github.com/\customHeader@githubUser} {github.com/\customHeader@githubUser}
         \end {rtabbing}
     }
     \rule {\textwidth} {0.5mm} % Rule under the header

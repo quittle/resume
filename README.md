@@ -10,6 +10,7 @@ This resume is written in LaTeX and builds with xelatex.
 # Install required system packages
 sudo apt-get install -y \
     chktex \
+    hunspell \
     lmodern \
     texlive-font-utils \
     texlive-fonts-recommended \

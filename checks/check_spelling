@@ -2,19 +2,34 @@
 
 CUR_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-invalid_words="$( \
-    pdftotext 'out/main.pdf' - | \
+function aspell_check() {
     aspell \
         --mode=tex \
         --lang=en_US \
-        --add-extra-dicts="${CUR_DIR}/spellcheck-good.txt" \
-        list | \
-    sort | \
-    uniq
-)"
+        --add-extra-dicts="${CUR_DIR}/aspell-whitelist.txt" \
+        list
+}
 
-if [ -n "${invalid_words}" ]; then
-    echo "Invalid words found"
-    echo "${invalid_words}"
-    exit 1
-fi
+function hunspell_check() {
+    hunspell \
+        -d en_US \
+        -p "${CUR_DIR}/hunspell-whitelist.dic" \
+        -l
+}
+
+for checker in aspell_check hunspell_check; do
+    invalid_words="$( \
+        pdftotext 'out/main.pdf' - | \
+        eval "$checker" | \
+        sort | \
+        uniq
+    )"
+
+    if [ -n "${invalid_words}" ]; then
+        echo "Invalid words found"
+        echo "-------------------"
+        echo "${invalid_words}"
+        exit 1
+    fi
+done
+

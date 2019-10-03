@@ -3,6 +3,7 @@ addons:
         packages:
             - aspell-en
             - chktex
+            - hunspell
             - lmodern
             - pgf
             - poppler-utils # pdftotext

@@ -1,16 +1,23 @@
-#!/bin/bash -e
+#!/bin/bash
 
 CUR_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 (
     cd "${CUR_DIR}/../src"
 
-    chktex \
+    chktex_result="$(chktex \
         -wall \
         --headererr=1 \
         --nowarn=1 \
         --nowarn=22 \
         --nowarn=30 \
         --verbosity=2 \
-        main
+        main 2>&1)"
+
+    echo "$chktex_result"
+
+    output_lines=$(echo "$chktex_result" | wc --lines)
+    if [[ $output_lines -ne 3 ]]; then
+        exit 1
+    fi
 )

@@ -26,7 +26,7 @@ for checker in aspell_check hunspell_check; do
     )"
 
     if [ -n "${invalid_words}" ]; then
-        echo "Invalid words found"
+        echo "Invalid words found by $checker"
         echo "-------------------"
         echo "${invalid_words}"
         exit 1

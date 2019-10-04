@@ -9,9 +9,11 @@ This resume is written in LaTeX and builds with xelatex.
 ```bash
 # Install required system packages
 sudo apt-get install -y \
+    aspell-en \
     chktex \
     hunspell \
     lmodern \
+    poppler-utils \
     texlive-font-utils \
     texlive-fonts-recommended \
     texlive-latex-base \

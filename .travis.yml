@@ -1,3 +1,4 @@
+dist: bionic
 addons:
     apt:
         packages:
@@ -5,7 +6,6 @@ addons:
             - chktex
             - hunspell
             - lmodern
-            - pgf
             - poppler-utils # pdftotext
             - texlive-font-utils
             - texlive-fonts-recommended

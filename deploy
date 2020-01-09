@@ -1,0 +1,6 @@
+#!/bin/bash -ex
+
+aws cloudformation deploy \
+    --template-file ./cloudformation.yml \
+    --stack-name resume-dustintoff-com \
+    --no-fail-on-empty-changeset

@@ -1,0 +1,42 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  CloudFrontDistribution:
+    Type: 'AWS::CloudFront::Distribution'
+    Properties:
+      DistributionConfig:
+        Origins:
+        - DomainName: github.com
+          OriginPath: /quittle/resume/releases/latest/download/Dustin.Toff.Resume.pdf
+          Id: GitHub
+          CustomOriginConfig:
+            HTTPPort: 80
+            HTTPSPort: 443
+            OriginProtocolPolicy: https-only
+        Enabled: true
+        DefaultRootObject: ''
+        Aliases:
+        - resume.dustintoff.com
+        DefaultCacheBehavior:
+          TargetOriginId: GitHub
+          SmoothStreaming: false
+          ForwardedValues:
+            QueryString: false
+            Cookies:
+              Forward: none
+          ViewerProtocolPolicy: redirect-to-https
+        PriceClass: PriceClass_100
+        ViewerCertificate:
+          AcmCertificateArn: arn:aws:acm:us-east-1:915290536872:certificate/6c81f7b2-b9a9-41d3-8437-0341df99131e
+          MinimumProtocolVersion: TLSv1.1_2016
+          SslSupportMethod: sni-only
+  DomainName:
+    Type: AWS::Route53::RecordSet
+    Properties:
+      HostedZoneId: Z1ER5K5Q0HJR06 # dustintoff.com
+      Name: resume.dustintoff.com
+      Type: A
+      AliasTarget:
+        # Global CloudFront Hosted Zone per
+        # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-aliastarget-1.html
+        HostedZoneId: Z2FDTNDATAQYW2
+        DNSName: !GetAtt CloudFrontDistribution.DomainName

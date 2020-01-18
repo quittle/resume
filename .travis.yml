@@ -1,4 +1,6 @@
 dist: bionic
+env:
+- AWS_DEFAULT_REGION=us-east-1
 addons:
     apt:
         packages:

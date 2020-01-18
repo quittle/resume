@@ -21,7 +21,7 @@ script:
 before_deploy:
     - cp out/main.pdf "Dustin Toff Resume.pdf"
 deploy:
-    - provider: releases
+    -   provider: releases
         api_key:
             secure: lF9ThEmNtkUJgrYTtaw+EIYNLA2tzcogPX7VWRzvs+Wx1yTT4o9Ikab1FOJuN2RlLrMdM8GTHTJ3xz4plAmpTk9YeSGcq9nI0xZk2dVrQkVnBhkiigETvcT9RVkaSXEv67NKxtT04U/yhN/O3Dv4h39Jj1esWwU1DHGlV5uBRUF3cXsrjINELaYfapshbURFa1GbZqZnV1QMVDacCve2m7xNkzr7AWYubSgm6X4h+topGq3fgfSPGDzXqhNY3hEkamME/3A08ah4CB/CKbj1Lw8EXQ/Fnrv1JGNTWsqPsZ22t6stlxlvNDo69eTtkztA1racSZBkE05Bh86psisIkHzKlD5bfzYZZHs2tq7Igyilcw+HGEEG6dwWB9iAiIDDnmbF6eTFy6VDrW301zi6zAAO5/yIPkPlb1yuV87I13AbVFAier0PDzaQyGjfFP/vmKMXt+rQkSRyaBpoCYSH45GOQ65C+62Me1A8yQnPie7mnu/6n6EE82AOEbNIDpImtGNewmPhUmmEnPnbF3kbkKLfBrhmBvg+k04PCjnUpagdFrrryWrnJGjXk1aKtUPN/pd/vbC+Ri9b4t2wb1gcLEWiUmilaJvGIzpkboqGr2TDvi0r1N6cdqvSsB2yFbOyizkjLw+kx0f9qxjiu0IusciPAzcPOGtuZFIYVdDnoOI=
         file: "Dustin Toff Resume.pdf"
@@ -29,7 +29,7 @@ deploy:
         on:
             branch: master
             tags: true
-    - provider: script
+    -   provider: script
         script: ./deploy
         skip_cleanup: true
         on:

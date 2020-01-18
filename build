@@ -6,6 +6,8 @@ ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 BUILD_DIR="${ROOT_DIR}/out"
 
+s3_contents="${BUILD_DIR}/s3-root"
+
 # Ensure the build directory exists
 mkdir -p "${BUILD_DIR}"
 
@@ -18,3 +20,7 @@ mkdir -p "${BUILD_DIR}"
         -interaction=nonstopmode \
         main
 )
+
+mkdir -p "${s3_contents}"
+
+cp "${BUILD_DIR}/main.pdf" "${s3_contents}/Dustin Toff Resume.pdf"

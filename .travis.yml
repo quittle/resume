@@ -14,7 +14,7 @@ addons:
             - texlive-xetex
             - xzdec
 install:
-    - pip install --user pdfx
+    - pip install --user pdfx awscli
 script:
     - ./build
     - ./check

@@ -1,6 +1,18 @@
 #!/bin/bash -ex
 
+generated_template="out/generated-cloudformation.yml"
+
+aws cloudformation package \
+        --template-file "cloudformation.yml" \
+        --s3-bucket sam-915290536872 \
+        --output-template-file "${generated_template}" \
+        --use-json
+
+code_uri="$(jq '.Resources.S3UploadLambda.Properties.CodeUri' "${generated_template}" --raw-output)"
+
 aws cloudformation deploy \
-    --template-file ./cloudformation.yml \
-    --stack-name resume-dustintoff-com \
-    --no-fail-on-empty-changeset
+        --template-file "${generated_template}" \
+        --stack-name resume-dustintoff-com \
+        --capabilities CAPABILITY_IAM \
+        --parameter-overrides "DeploymentContentVersion=${code_uri}" \
+        --no-fail-on-empty-changeset

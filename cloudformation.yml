@@ -1,7 +1,32 @@
-AWSTemplateFormatVersion: '2010-09-09'
+AWSTemplateFormatVersion: 2010-09-09
+Transform: AWS::Serverless-2016-10-31
+Parameters:
+  DeploymentContentVersion:
+    Type: String
+    Description: Hash of the source files
 Resources:
+  ResumeDustinToffComBucket:
+    Type: AWS::S3::Bucket
+    Name: resume.dustintoff.com
+  S3UploadLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      Layers: [ arn:aws:lambda:us-east-1:915290536872:layer:S3UploadCustomResource:14 ]
+      CodeUri: out/s3-root
+      Handler: s3-upload-custom-resource.handler # This is fixed and references a file provided by
+                                                 # this project and available in the Lambda layer.
+      Runtime: nodejs12.x
+      Policies:
+      - S3CrudPolicy:
+          BucketName: !Ref ResumeDustinToffComBucket
+  UploadToBucket:
+    Type: Custom::UploadFilesToS3
+    Properties:
+      ServiceToken: !GetAtt S3UploadLambda.Arn
+      BucketName: !Ref ResumeDustinToffComBucket
+      ContentVersion: !Ref DeploymentContentVersion
   CloudFrontDistribution:
-    Type: 'AWS::CloudFront::Distribution'
+    Type: AWS::CloudFront::Distribution
     Properties:
       DistributionConfig:
         Origins:

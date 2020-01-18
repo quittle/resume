@@ -11,7 +11,8 @@ Resources:
   S3UploadLambda:
     Type: AWS::Serverless::Function
     Properties:
-      Layers: [ arn:aws:lambda:us-east-1:915290536872:layer:S3UploadCustomResource:14 ]
+      Layers:
+      - arn:aws:lambda:us-east-1:915290536872:layer:S3UploadCustomResource:14
       CodeUri: out/s3-root
       Handler: s3-upload-custom-resource.handler # This is fixed and references a file provided by
                                                  # this project and available in the Lambda layer.

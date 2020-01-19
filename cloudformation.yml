@@ -5,10 +5,28 @@ Parameters:
     Type: String
     Description: Hash of the source files
 Resources:
+  CloudFrontOriginAccessIdentity:
+    Type: AWS::CloudFront::CloudFrontOriginAccessIdentity
+    Properties:
+      CloudFrontOriginAccessIdentityConfig:
+        Comment: resume.dustintoff.com
   ResumeDustinToffComBucket:
     Type: AWS::S3::Bucket
     Properties:
       BucketName: resume.dustintoff.com
+  ResumeDustinToffComBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref ResumeDustinToffComBucket
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+        - Action:
+          - s3:GetObject
+          Effect: Allow
+          Resource: !Join ["", [!GetAtt ResumeDustinToffComBucket.Arn, "/*"]]
+          Principal:
+            CanonicalUser: !GetAtt CloudFrontOriginAccessIdentity.S3CanonicalUserId
   S3UploadLambda:
     Type: AWS::Serverless::Function
     Properties:
@@ -32,19 +50,16 @@ Resources:
     Properties:
       DistributionConfig:
         Origins:
-        - DomainName: github.com
-          OriginPath: /quittle/resume/releases/latest/download/Dustin.Toff.Resume.pdf
-          Id: GitHub
-          CustomOriginConfig:
-            HTTPPort: 80
-            HTTPSPort: 443
-            OriginProtocolPolicy: https-only
+        - DomainName: !GetAtt ResumeDustinToffComBucket.DomainName
+          Id: S3
+          S3OriginConfig:
+            OriginAccessIdentity: !Join ["", ["origin-access-identity/cloudfront/", !Ref CloudFrontOriginAccessIdentity]]
         Enabled: true
-        DefaultRootObject: ''
+        DefaultRootObject: "Dustin.Toff.Resume.pdf"
         Aliases:
         - resume.dustintoff.com
         DefaultCacheBehavior:
-          TargetOriginId: GitHub
+          TargetOriginId: S3
           SmoothStreaming: false
           ForwardedValues:
             QueryString: false

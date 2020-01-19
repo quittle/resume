@@ -23,4 +23,4 @@ mkdir -p "${BUILD_DIR}"
 
 mkdir -p "${s3_contents}"
 
-cp "${BUILD_DIR}/main.pdf" "${s3_contents}/Dustin Toff Resume.pdf"
+cp "${BUILD_DIR}/main.pdf" "${s3_contents}/Dustin.Toff.Resume.pdf"

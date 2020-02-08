@@ -55,7 +55,7 @@ Resources:
           S3OriginConfig:
             OriginAccessIdentity: !Join ["", ["origin-access-identity/cloudfront/", !Ref CloudFrontOriginAccessIdentity]]
         Enabled: true
-        DefaultRootObject: "Dustin.Toff.Resume.pdf"
+        DefaultRootObject: "index.html"
         Aliases:
         - resume.dustintoff.com
         DefaultCacheBehavior:
@@ -66,6 +66,7 @@ Resources:
             Cookies:
               Forward: none
           ViewerProtocolPolicy: redirect-to-https
+        HttpVersion: http2
         PriceClass: PriceClass_100
         ViewerCertificate:
           AcmCertificateArn: arn:aws:acm:us-east-1:915290536872:certificate/6c81f7b2-b9a9-41d3-8437-0341df99131e

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Dustin Toff - Resume</title>
+        <meta name=description content="Dustin Toff's personal resume. https://dustintoff.com" />
+        <meta name=author content="Dustin Toff" />
+        <meta name=theme-color content="#FCAA3D" />
+        <meta name="viewport" content="initial-scale=0.5">
+        <link rel="icon" type="image/png" href="https://dustintoff.com/favicon.png">
+        <style>
+            /* Color Theme: https://coolors.co/fcaa3d-ffaf87-ff8e72-f1bb87-ed6a5e */
+
+            html, body {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                width: 100%;
+                font-family: sans-serif;
+
+                background: #FCAA3D;
+            }
+
+            main {
+                background: #FCAA3D;
+                text-align: center;
+                color: white;
+                height: 100%;
+                padding: 3em;
+            }
+
+            a {
+                text-decoration: none;
+                color: white;
+                display: inline-block;
+            }
+
+            h1 {
+                text-align: left;
+                font-size: 3em;
+                border-bottom: .2em solid #F1BB87;
+                padding-bottom: .2em;
+                margin: 0;
+            }
+
+            #uh-oh {
+                font-size: 2em;
+            }
+
+            #download-button {
+                border-radius: .3em;
+                border: 0;
+                padding: 1.5em;
+                font-size: 3em;
+                background: #FF8E72;
+                margin: 1em;
+                cursor: pointer;
+            }
+
+            #download-button:hover {
+                background: #ED6A5E;
+            }
+
+            #download-img {
+                margin-top: 1em;
+                height: 3em;
+            }
+        </style>
+    </head>
+    <body>
+        <object data="https://resume.dustintoff.com/Dustin.Toff.Resume.pdf" type="application/pdf" width="100%" height="100%" aria-label="Resume PDF">
+            <main>
+                <h1><a href="https://dustintoff.com">&gt; Dustin Toff</a></h1>
+                <p id="uh-oh">Uh-oh, your browser doesn't support PDFs.</p>
+                <a href="https://resume.dustintoff.com/Dustin.Toff.Resume.pdf">
+                    <button id="download-button">
+                        CLICK HERE TO DOWNLOAD<br>
+                        <svg id="download-img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 12v7H5v-7H3v7c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2zm-6 .67l2.59-2.58L17 11.5l-5 5-5-5 1.41-1.41L11 12.67V3h2z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
+                    </button>
+                </a>
+            </main>
+        </object>
+    </body>
+</html>

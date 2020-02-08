@@ -21,6 +21,8 @@ mkdir -p "${BUILD_DIR}"
         main
 )
 
+rm -rf "${s3_contents}"
 mkdir -p "${s3_contents}"
 
 cp "${BUILD_DIR}/main.pdf" "${s3_contents}/Dustin.Toff.Resume.pdf"
+cp -r "${ROOT_DIR}/html-src/." "${s3_contents}"

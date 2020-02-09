@@ -1,6 +1,6 @@
 # Welcome to Dustin Toff's Resume [![Build Status](https://travis-ci.com/quittle/resume.svg?branch=master)](https://travis-ci.com/quittle/resume)
 
-[<img alt="PDF" src="/pdf-icon.svg" height="12px"/> Click here](https://github.com/quittle/resume/releases/latest/download/Dustin.Toff.Resume.pdf) for the latest copy of my resume!
+[<img alt="PDF" src="/pdf-icon.svg" height="12px"/> Click here](https://resume.dustintoff.com) for the latest copy of my resume!
 
 ### Developing
 

@@ -4,6 +4,7 @@
     lastName/.estore in = \customHeader@lastName,
     email/.estore in = \customHeader@email,
     phone/.estore in = \customHeader@phone,
+    resumeLink/.estore in = \customHeader@resumeLink,
     website/.estore in = \customHeader@website,
     websiteLink/.estore in = \customHeader@websiteLink,
     githubUser/.estore in = \customHeader@githubUser,
@@ -12,7 +13,7 @@
     \pgfkeys {/customHeader,#1}
     \parbox {0.3\textwidth} {
         \vspace {0.3cm}
-        {\Huge {\color {slateblue} \textbf {\customHeader@firstName\ \customHeader@lastName} }} \\ % Header section name and color
+        \href {\customHeader@resumeLink} {\Huge {\color {slateblue} \textbf {\customHeader@firstName\ \customHeader@lastName} }} \\ % Header section name and color
     }
     \hfill
     \parbox {\textwidth} {

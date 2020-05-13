@@ -1,17 +1,33 @@
 #!/bin/bash
 
-pdfx --json out/main.pdf | \
-    python -c "import json; import sys; print('\n'.join(json.load(sys.stdin)['references']['url']))" | \
-    while read line; do
+function try_curl() {
+    url="$1"
+
+    http_code="$(curl \
+        --silent \
+        --location \
+        --write-out '%{http_code}' \
+        --output /dev/null \
+        "${url}")"
+
+    if [ "${http_code}" != 200 ]; then
         http_code="$(curl \
             --silent \
             --location \
             --write-out '%{http_code}' \
+            --output /dev/null \
             --user-agent 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36' \
-            "${line}" \
-            --output /dev/null)"
+            "${url}")"
+
         if [ "${http_code}" != 200 ]; then
-            echo "Failed to load url! ${line}: ${http_code}"
+            echo "Failed to load url! ${url}"
             exit 1
         fi
+    fi
+}
+
+pdfx --json out/main.pdf | \
+    python -c "import json; import sys; print('\n'.join(json.load(sys.stdin)['references']['url']))" | \
+    while read url; do
+        try_curl "$url"
     done

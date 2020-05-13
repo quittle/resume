@@ -19,9 +19,12 @@ sudo apt-get install -y \
     texlive-latex-base \
     texlive-latex-extra \
     texlive-xetex \
-    xzdec
+    xzdec \
+    python3-pip
 
-pip install pdfx
+pip3 install pdfx
+
+# Open a new terminal so pdfx is available
 
 # Build the resume
 ./build

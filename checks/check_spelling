@@ -32,4 +32,3 @@ for checker in aspell_check hunspell_check; do
         exit 1
     fi
 done
-

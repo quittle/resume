@@ -1,0 +1,45 @@
+on: [push]
+
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: |
+          sudo apt-get install \
+            aspell-en \
+            chktex \
+            hunspell \
+            lmodern \
+            poppler-utils \
+            texlive-font-utils \
+            texlive-fonts-recommended \
+            texlive-latex-base \
+            texlive-latex-extra \
+            texlive-xetex \
+            xzdec
+          pip install --user pdfx
+
+      - name: Build
+        run: ./build
+
+      - name: Check
+        run: ./check
+
+      - name: Create Release
+        uses: ncipollo/release-action@v1
+        if: startsWith(github.ref, 'refs/tags/v')
+        with:
+          artifacts: "Dustin Toff Resume.pdf"
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Deploy
+        run: |
+          cp out/main.pdf "Dustin Toff Resume.pdf"
+          ./deploy

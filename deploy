@@ -1,5 +1,7 @@
 #!/bin/bash -ex
 
+export AWS_DEFAULT_REGION=us-east-1
+
 generated_template="out/generated-cloudformation.yml"
 
 aws cloudformation package \

@@ -2,6 +2,11 @@
 
 export AWS_DEFAULT_REGION=us-east-1
 
+lambda_layer_version='v1.0.3'
+wget \
+        "https://github.com/quittle/s3-upload-custom-resource-lambda-layer/releases/download/${lambda_layer_version}/layer.zip" \
+        -O 'out/s3-upload-custom-resource-lambda-layer.zip'
+
 generated_template="out/generated-cloudformation.yml"
 
 aws cloudformation package \

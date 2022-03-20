@@ -2,7 +2,8 @@
     firstName = Dustin,
     lastName = Toff,
     email = me@dustintoff.com,
-    phone = +1 (724) 638\textendash7893 \,|\, +44 07868 000665,
+    phone = +1 (724) 638-7893, % chktex 8 - Usage of hyphens
+    phoneLink = tel:+1-724-638-7893, % chktex 8 - Usage of hyphens
     resumeLink = https://resume.dustintoff.com,
     website = dustintoff.com,
     websiteLink = https://dustintoff.com,
@@ -10,7 +11,9 @@
 ]
 
 % I am unsure why this is necessary for the personal section to show up
+% The blank line between is needed to keep a space before the personal section.
 \parbox {\textwidth} {}
+
 ~\\
 
 \input {sections/personal}
@@ -18,5 +21,13 @@
 \sectionblock {Experience} {\input {sections/employment}}
 
 \sectionblock {Education} {\input {sections/education}}
+
+\newpage
+
+\secondaryHeader [
+    firstName = Dustin,
+    lastName = Toff,
+    resumeLink = https://resume.dustintoff.com,
+]
 
 \sectionblock {Personal Projects} {\input {sections/projects}}

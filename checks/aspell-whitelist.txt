@@ -1,16 +1,21 @@
-personal_ws-1.1 en 0
+personal_ws-1.1 en 0 utf-8
 API
-AWS
 Arrrg
+AWS
+backend
 Bazel
 CommenTube
+Deque
 dustintoff
 FontTools
-Gradle
-TTF
 glyphs
-minifier
-videographer
+Gradle
 integrations
+Javascript
+Meta’s
+minifier
+subprojects
+TTF
+videographer
 WorkLink
-backend
+Wowser

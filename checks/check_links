@@ -3,6 +3,11 @@
 function try_curl() {
     url="$1"
 
+    # Ignore telephone links which won't resolve
+    if [[ "${url}" =~ tel:\+?[0-9][0-9\-]+[0-9] ]]; then
+        return 0
+    fi
+
     http_code="$(curl \
         --silent \
         --location \
@@ -26,8 +31,8 @@ function try_curl() {
     fi
 }
 
-pdfx --json out/main.pdf | \
-    python -c "import json; import sys; print('\n'.join(json.load(sys.stdin)['references']['url']))" | \
+pdfx --json out/main.pdf |
+    python -c "import json; import sys; print('\n'.join(json.load(sys.stdin)['references']['url']))" |
     while read url; do
         try_curl "$url"
     done

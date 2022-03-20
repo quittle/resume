@@ -4,12 +4,13 @@
     lastName/.estore in = \customHeader@lastName,
     email/.estore in = \customHeader@email,
     phone/.estore in = \customHeader@phone,
+    phoneLink/.estore in = \customHeader@phoneLink,
     resumeLink/.estore in = \customHeader@resumeLink,
     website/.estore in = \customHeader@website,
     websiteLink/.estore in = \customHeader@websiteLink,
     githubUser/.estore in = \customHeader@githubUser,
 }
-\newcommand {\customHeader} [7] [] {
+\newcommand {\customHeader} [8] [] {
     \pgfkeys {/customHeader,#1}
     \parbox {0.3\textwidth} {
         \vspace {0.3cm}
@@ -18,17 +19,34 @@
     \hfill
     \parbox {\textwidth} {
         \begin {rtabbing}
-            \hspace{2.6cm} \= \customHeader@email \= \hspace{0.3cm} \= \hfill {\raggedleft \href {\customHeader@websiteLink} {\customHeader@website}} \\
-            \customHeader@phone \> \> \> \href {https://github.com/\customHeader@githubUser} {github.com/\customHeader@githubUser}
+            \= \customHeader@email \= \hspace{0.3cm} \= \hfill {\raggedleft \href {\customHeader@websiteLink} {\customHeader@website}} \\
+            \href {\customHeader@phoneLink}{\customHeader@phone} \> \> \> \href {https://github.com/\customHeader@githubUser} {github.com/\customHeader@githubUser}
         \end {rtabbing}
     }
+    \rule {\textwidth} {0.5mm} % Rule under the header
+}
+
+\pgfkeys {
+    /secondaryHeader/.is family, /secondaryHeader,
+    firstName/.estore in = \secondaryHeader@firstName,
+    lastName/.estore in = \secondaryHeader@lastName,
+    resumeLink/.estore in = \secondaryHeader@resumeLink,
+}
+\newcommand {\secondaryHeader} [2] [] {
+    \pgfkeys {/secondaryHeader,#1}
+    \parbox {0.3\textwidth} {
+        \vspace {0.3cm}
+        \href {\secondaryHeader@resumeLink} {\Huge {\color {slateblue} \textbf {\secondaryHeader@firstName\ \secondaryHeader@lastName} }} \\ % Header section name and color
+    }
+    \hfill
+    \parbox {\textwidth} {}
     \rule {\textwidth} {0.5mm} % Rule under the header
 }
 
 \newcommand {\schoolgroup} [6] {
     \tabbedblock {
         \textbf {#1}
-            \> \textit {#2} \spaceendash \href {#3} {#4} \\ [5pt]
+            \> \textit {#2} \spaceemdash \href {#3} {#4} \\ [5pt]
             \> \parbox {0.27\textwidth} { % First block
                     \textit {#5}
                 }
@@ -41,7 +59,7 @@
 \newcommand {\job} [6] {
     \begin {tabbing}
         \hspace {2.5cm} \= \kill
-        \textbf {#1} \ifthenelse {\equal {#2} {} } {} {-} \textbf {#2} \> \href {#4} {#3} \spaceendash \textit {#5} \\
+        \textbf {#1} \ifthenelse {\equal {#2} {} } {} {\textendash} \textbf {#2} \> \href {#4} {#3} \spaceemdash \textit {#5} \\
         \parbox {\textwidth} {
             \vspace{1mm}
             #6

@@ -3,7 +3,7 @@
 num_pages="$(pdfx --json out/main.pdf | \
     python -c "import json; import sys; print(json.load(sys.stdin)['metadata']['Pages'])")"
 
-if [ "${num_pages}" != 1 ]; then
-    echo "Resume should only be one page but was ${num_pages}"
+if [ "${num_pages}" != 2 ]; then
+    echo "Resume should be exactly one page but was ${num_pages}"
     exit 1
 fi

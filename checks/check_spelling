@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-CUR_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+CUR_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 function aspell_check() {
     aspell \
@@ -18,11 +18,11 @@ function hunspell_check() {
 }
 
 for checker in aspell_check hunspell_check; do
-    invalid_words="$( \
-        pdftotext 'out/main.pdf' - | \
-        eval "$checker" | \
-        sort | \
-        uniq
+    invalid_words="$(
+        pdftotext 'out/main.pdf' - |
+            eval "$checker" |
+            sort |
+            uniq
     )"
 
     if [ -n "${invalid_words}" ]; then

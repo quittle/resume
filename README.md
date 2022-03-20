@@ -1,4 +1,4 @@
-# Welcome to Dustin Toff's Resume [![Build Status](https://travis-ci.com/quittle/resume.svg?branch=master)](https://travis-ci.com/quittle/resume)
+# Welcome to Dustin Toff's Resume [![Build Status](https://github.com/quittle/resume/actions/workflows/action.yml/badge.svg)](https://github.com/quittle/resume/actions/workflows/action.yml)
 
 [<img alt="PDF" src="/pdf-icon.svg" height="12px"/> Click here](https://resume.dustintoff.com) for the latest copy of my resume!
 
@@ -23,6 +23,14 @@ sudo apt-get install -y \
     python3-pip
 
 pip3 install pdfx
+
+# Install AWS CLI - https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+(
+    cd ~/Downloads
+    curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+    unzip awscliv2.zip
+    sudo ./aws/install
+)
 
 # Open a new terminal so pdfx is available
 
